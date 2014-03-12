@@ -47,6 +47,51 @@
 #define IPHONE_SIMULATOR_IPAD_NAMESTRING    @"iPad Simulator"
 #define SIMULATOR_APPLETV_NAMESTRING    @"Apple TV Simulator"
 
+
+#define PPI_UNKNOWN             9999
+#define PPI_TODO                8888
+
+#define IFPGA_PPI                PPI_UNKNOWN
+
+#define IPHONE_1_PPI             163
+#define IPHONE_3G_PPI            163
+#define IPHONE_3GS_PPI           163
+#define IPHONE_4_PPI             326
+#define IPHONE_4S_PPI            326
+#define IPHONE_5_PPI             326
+#define IPHONE_5C_PPI            326
+#define IPHONE_5S_PPI            326
+#define IPHONE_UNKNOWN_PPI       PPI_UNKNOWN
+
+#define IPOD_1_PPI               PPI_TODO
+#define IPOD_2_PPI               PPI_TODO
+#define IPOD_3_PPI               PPI_TODO
+#define IPOD_4_PPI               PPI_TODO
+#define IPOD_5_PPI               PPI_TODO
+#define IPOD_UNKNOWN_PPI         PPI_UNKNOWN
+
+#define IPAD_1_PPI               132
+#define IPAD_2_PPI               132
+#define THE_NEW_IPAD_PPI         264
+#define IPAD_4G_PPI              264
+#define IPAD_AIR_PPI             264
+#define IPAD_AIR_LTE_PPI         264
+
+#define IPAD_MINI_PPI            163
+#define IPAD_UNKNOWN_PPI         PPI_UNKNOWN
+
+#define APPLETV_2G_PPI           PPI_TODO
+#define APPLETV_3G_PPI           PPI_TODO
+#define APPLETV_4G_PPI           PPI_TODO
+#define APPLETV_UNKNOWN_PPI      PPI_UNKNOWN
+
+#define IOS_FAMILY_UNKNOWN_DEVICE_PPI       PPI_UNKNOWN
+
+#define IPHONE_SIMULATOR_PPI         PPI_UNKNOWN
+#define IPHONE_SIMULATOR_IPHONE_PPI  PPI_UNKNOWN
+#define IPHONE_SIMULATOR_IPAD_PPI    PPI_UNKNOWN
+#define SIMULATOR_APPLETV_PPI    PPI_UNKNOWN
+
 typedef enum {
     UIDeviceUnknown,
 
@@ -126,6 +171,7 @@ typedef enum {
 + (NSUInteger) platformTypeForString:(NSString *)platform;
 + (NSString *) platformStringForType:(NSUInteger)platformType;
 + (NSString *) platformStringForPlatform:(NSString *)platform;
++ (NSUInteger) ppiForPlatformType:(NSUInteger)platformType;
 
 + (BOOL) hasRetinaDisplay;
 + (BOOL) has4InchDisplay;

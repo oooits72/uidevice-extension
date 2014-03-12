@@ -353,6 +353,57 @@
     }
 }
 
++ (NSUInteger) ppiForPlatformType:(NSUInteger)platformType
+{
+    switch (platformType)
+    {
+        case UIDeviceiPhone1:               return IPHONE_1_PPI;
+        case UIDeviceiPhone3G:              return IPHONE_3G_PPI;
+        case UIDeviceiPhone3GS:             return IPHONE_3GS_PPI;
+        case UIDeviceiPhone4GSM:            return IPHONE_4_PPI;
+        case UIDeviceiPhone4GSMRevA:        return IPHONE_4_PPI;
+        case UIDeviceiPhone4CDMA:           return IPHONE_4_PPI;
+        case UIDeviceiPhone4S:              return IPHONE_4S_PPI;
+        case UIDeviceiPhone5GSM:            return IPHONE_5_PPI;
+        case UIDeviceiPhone5CDMA:           return IPHONE_5_PPI;
+        case UIDeviceiPhone5CGSM:           return IPHONE_5C_PPI;
+        case UIDeviceiPhone5CGSMCDMA:       return IPHONE_5C_PPI;
+        case UIDeviceiPhone5SGSM:           return IPHONE_5S_PPI;
+        case UIDeviceiPhone5SGSMCDMA:       return IPHONE_5S_PPI;
+        case UIDeviceUnknowniPhone:         return IPHONE_UNKNOWN_PPI;
+
+        case UIDeviceiPod1:                 return IPOD_1_PPI;
+        case UIDeviceiPod2:                 return IPOD_2_PPI;
+        case UIDeviceiPod3:                 return IPOD_3_PPI;
+        case UIDeviceiPod4:                 return IPOD_4_PPI;
+        case UIDeviceiPod5:                 return IPOD_5_PPI;
+        case UIDeviceUnknowniPod:           return IPOD_UNKNOWN_PPI;
+
+        case UIDeviceiPad1 :                return IPAD_1_PPI;
+        case UIDeviceiPad2 :                return IPAD_2_PPI;
+        case UIDeviceTheNewiPad :           return THE_NEW_IPAD_PPI;
+        case UIDeviceiPad4G :               return IPAD_4G_PPI;
+        case UIDeviceiPadAir :              return IPAD_AIR_PPI;
+        case UIDeviceiPadAirLTE :           return IPAD_AIR_LTE_PPI;
+        case UIDeviceiPadMini :             return IPAD_MINI_PPI;
+        case UIDeviceUnknowniPad :          return IPAD_UNKNOWN_PPI;
+
+        case UIDeviceAppleTV2 :             return APPLETV_2G_PPI;
+        case UIDeviceAppleTV3 :             return APPLETV_3G_PPI;
+        case UIDeviceAppleTV4 :             return APPLETV_4G_PPI;
+        case UIDeviceUnknownAppleTV:        return APPLETV_UNKNOWN_PPI;
+
+        case UIDeviceiPhoneSimulator:       return IPHONE_SIMULATOR_PPI;
+        case UIDeviceiPhoneSimulatoriPhone: return IPHONE_SIMULATOR_IPHONE_PPI;
+        case UIDeviceiPhoneSimulatoriPad:   return IPHONE_SIMULATOR_IPAD_PPI;
+        case UIDeviceSimulatorAppleTV:      return SIMULATOR_APPLETV_PPI;
+
+        case UIDeviceIFPGA:                 return IFPGA_PPI;
+
+        default:                            return IOS_FAMILY_UNKNOWN_DEVICE_PPI;
+    }
+}
+
 + (NSString *) platformStringForPlatform:(NSString *)platform
 {
 	NSUInteger platformType = [UIDevice platformTypeForString:platform];
