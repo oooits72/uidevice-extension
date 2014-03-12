@@ -1,20 +1,12 @@
 Pod::Spec.new do |s|
 
   s.name         = "uidevice-extension"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "Categories that expand on the information provided by UIDevice"
 
   s.description  = <<-DESC
-  # UIDevice-Extension 
+  # UIDevice-Extension
 is a series of UIDevice categories that expand upon the information already provided by UIKit.
-
-The categories are split up into:
-
-* **Capabilities** - feature capability support (**currently not working**)
-* **Hardware** - hardware features and device recognition
-* **IOKitExtensions** - IOKit access
-* **Orientation** - device orientation
-* **Reachability** - network and internet connection status
 
 The project was originally started by Erica Sadun [github](https://github.com/erica).
                    DESC
@@ -27,7 +19,7 @@ The project was originally started by Erica Sadun [github](https://github.com/er
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.authors       = { 
+  s.authors       = {
                     "Erica Sadun" => "erica@ericasadun.com",
                     "Ian G" => "yo.ian.g@gmail.com",
                     "Richard" => "othercat@gmail.com",
@@ -50,13 +42,12 @@ The project was originally started by Erica Sadun [github](https://github.com/er
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.source       = { :git => "https://github.com/yoiang/uidevice-extension.git", :tag => "0.0.4" }
+  s.source       = { :git => "https://github.com/mkutgt72/uidevice-extension.git", :tag => "0.0.5" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.source_files  = '*.{h,m}', 'Apple/*.{h,c}'
-  s.exclude_files = 'Example', 'UIDevice-IOKitExtensions.{h,m}'
+  s.source_files  = '*.{h,m}'
 
   s.public_header_files = '*.h'
 
