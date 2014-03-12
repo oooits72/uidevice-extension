@@ -10,8 +10,8 @@
 
 #define IPHONE_1_NAMESTRING             @"iPhone 1"
 #define IPHONE_3G_NAMESTRING            @"iPhone 3G"
-#define IPHONE_3GS_NAMESTRING           @"iPhone 3GS" 
-#define IPHONE_4_NAMESTRING             @"iPhone 4" 
+#define IPHONE_3GS_NAMESTRING           @"iPhone 3GS"
+#define IPHONE_4_NAMESTRING             @"iPhone 4"
 #define IPHONE_4S_NAMESTRING            @"iPhone 4S"
 #define IPHONE_5_NAMESTRING             @"iPhone 5"
 #define IPHONE_5C_NAMESTRING            @"iPhone 5C"
@@ -49,12 +49,12 @@
 
 typedef enum {
     UIDeviceUnknown,
-    
+
     UIDeviceiPhoneSimulator,
     UIDeviceiPhoneSimulatoriPhone, // both regular and iPhone 4 devices
     UIDeviceiPhoneSimulatoriPad,
     UIDeviceSimulatorAppleTV,
-    
+
     UIDeviceiPhone1,
     UIDeviceiPhone3G,
     UIDeviceiPhone3GS,
@@ -70,13 +70,13 @@ typedef enum {
     UIDeviceiPhone5CGSMCDMA,
     UIDeviceiPhone5SGSM,
     UIDeviceiPhone5SGSMCDMA,
-    
+
     UIDeviceiPod1,
     UIDeviceiPod2,
     UIDeviceiPod3,
     UIDeviceiPod4,
     UIDeviceiPod5,
-    
+
     UIDeviceiPad1,
     UIDeviceiPad2,
     UIDeviceTheNewiPad,
@@ -84,11 +84,11 @@ typedef enum {
     UIDeviceiPadAir,
     UIDeviceiPadAirLTE,
     UIDeviceiPadMini,
-    
+
     UIDeviceAppleTV2,
     UIDeviceAppleTV3,
     UIDeviceAppleTV4,
-    
+
     UIDeviceUnknowniPhone,
     UIDeviceUnknowniPod,
     UIDeviceUnknowniPad,
@@ -103,7 +103,7 @@ typedef enum {
     UIDeviceFamilyiPad,
     UIDeviceFamilyAppleTV,
     UIDeviceFamilyUnknown,
-    
+
 } UIDeviceFamily;
 
 @interface UIDevice (Hardware)
@@ -128,9 +128,7 @@ typedef enum {
 + (NSString *) platformStringForPlatform:(NSString *)platform;
 
 + (BOOL) hasRetinaDisplay;
-+ (NSString *) imageSuffixRetinaDisplay;
 + (BOOL) has4InchDisplay;
-+ (NSString *) imageSuffix4InchDisplay;
 
 - (UIDeviceFamily) deviceFamily;
 @end

@@ -15,7 +15,7 @@
 
 // Add support for subscripting to the iOS 5 SDK.
 // reference from http://stackoverflow.com/questions/11658669/how-to-enable-the-new-objective-c-object-literals-on-ios
-// also found from github https://github.com/tewha/iOS-Subscripting 
+// also found from github https://github.com/tewha/iOS-Subscripting
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED < 60000
 @interface NSDictionary(subscripts)
@@ -46,7 +46,7 @@
 @implementation UIDevice (Hardware)
 /*
  Platforms
- 
+
  iFPGA ->        ??
 
  iPhone1,1 ->    iPhone 1, M68
@@ -68,7 +68,7 @@
  iPod2,2   ->    iPod touch 3, Prototype
  iPod3,1   ->    iPod touch 3, N18
  iPod4,1   ->    iPod touch 4, N81
- 
+
  // Thanks NSForge
  ipad0,1   ->    iPad, Prototype
  iPad1,1   ->    iPad 1, WiFi and 3G, K48
@@ -96,10 +96,10 @@
 {
     size_t size;
     sysctlbyname(typeSpecifier, NULL, &size, NULL, 0);
-    
+
     char *answer = malloc(size);
     sysctlbyname(typeSpecifier, answer, &size, NULL, 0);
-    
+
     NSString *results = @(answer);
 
     free(answer);
@@ -183,7 +183,7 @@
 +( NSInteger )getSubmodel:( NSString* )platform
 {
     NSInteger submodel = -1;
-    
+
     NSArray* components = [ platform componentsSeparatedByString:@"," ];
     if ( [ components count ] >= 2 )
     {
@@ -212,13 +212,13 @@
 + (BOOL)isSmallerScreenForPlatform:(NSString *)platform
 {
     BOOL smallerScreen = YES;
-    
+
     // Simulator thanks Jordan Breeding
     if ( [self is86PlatformPrefix:platform] )
     {
         smallerScreen = [ [UIScreen mainScreen] bounds].size.width < 768;
     }
-    
+
     return smallerScreen;
 }
 
@@ -226,7 +226,7 @@
 {
     // The ever mysterious iFPGA
     if ([platform isEqualToString:@"iFPGA"])        return UIDeviceIFPGA;
-	
+
     // iPhone
     if ([platform isEqualToString:@"iPhone1,1"])    return UIDeviceiPhone1;
     if ([platform isEqualToString:@"iPhone1,2"])    return UIDeviceiPhone3G;
@@ -241,7 +241,7 @@
     if ([platform isEqualToString:@"iPhone5,4"])    return UIDeviceiPhone5CGSMCDMA;
     if ([platform isEqualToString:@"iPhone6,1"])    return UIDeviceiPhone5SGSM;
     if ([platform isEqualToString:@"iPhone6,2"])    return UIDeviceiPhone5SGSMCDMA;
-    
+
     // iPod
     if ([platform hasPrefix:@"iPod1"])              return UIDeviceiPod1;
     if ([platform isEqualToString:@"iPod2,2"])      return UIDeviceiPod3;
@@ -249,7 +249,7 @@
     if ([platform hasPrefix:@"iPod3"])              return UIDeviceiPod3;
     if ([platform hasPrefix:@"iPod4"])              return UIDeviceiPod4;
     if ([platform hasPrefix:@"iPod5"])              return UIDeviceiPod5;
-	
+
     // iPad
     if ([platform hasPrefix:@"iPad1"])              return UIDeviceiPad1;
     if ([platform hasPrefix:@"iPad2"])
@@ -274,20 +274,20 @@
             return UIDeviceiPad4G;
         }
     }
-    
+
     if ([platform isEqualToString:@"iPad4,1"])    return UIDeviceiPadAir;
     if ([platform isEqualToString:@"iPad4,2"])    return UIDeviceiPadAirLTE;
-    
+
     // Apple TV
     if ([platform hasPrefix:@"AppleTV2"])           return UIDeviceAppleTV2;
     if ([platform hasPrefix:@"AppleTV3"])           return UIDeviceAppleTV3;
-	
+
     if ([platform hasPrefix:@"iPhone"])             return UIDeviceUnknowniPhone;
     if ([platform hasPrefix:@"iPod"])               return UIDeviceUnknowniPod;
     if ([platform hasPrefix:@"iPad"])               return UIDeviceUnknowniPad;
     if ([platform hasPrefix:@"AppleTV"])            return UIDeviceUnknownAppleTV;
-    
-    
+
+
     if ( [self is86PlatformPrefix:platform] )
     {
         if ( [self isSmallerScreenForPlatform:platform] )
@@ -298,7 +298,7 @@
             return UIDeviceiPhoneSimulatoriPad;
         }
     }
-	
+
     return UIDeviceUnknown;
 }
 
@@ -320,14 +320,14 @@
         case UIDeviceiPhone5SGSM:           return IPHONE_5S_NAMESTRING;
         case UIDeviceiPhone5SGSMCDMA:       return IPHONE_5S_NAMESTRING;
         case UIDeviceUnknowniPhone:         return IPHONE_UNKNOWN_NAMESTRING;
-			
+
         case UIDeviceiPod1:                 return IPOD_1_NAMESTRING;
         case UIDeviceiPod2:                 return IPOD_2_NAMESTRING;
         case UIDeviceiPod3:                 return IPOD_3_NAMESTRING;
         case UIDeviceiPod4:                 return IPOD_4_NAMESTRING;
         case UIDeviceiPod5:                 return IPOD_5_NAMESTRING;
         case UIDeviceUnknowniPod:           return IPOD_UNKNOWN_NAMESTRING;
-            
+
         case UIDeviceiPad1 :                return IPAD_1_NAMESTRING;
         case UIDeviceiPad2 :                return IPAD_2_NAMESTRING;
         case UIDeviceTheNewiPad :           return THE_NEW_IPAD_NAMESTRING;
@@ -336,19 +336,19 @@
         case UIDeviceiPadAirLTE :           return IPAD_AIR_LTE_NAMESTRING;
         case UIDeviceiPadMini :             return IPAD_MINI_NAMESTRING;
         case UIDeviceUnknowniPad :          return IPAD_UNKNOWN_NAMESTRING;
-            
+
         case UIDeviceAppleTV2 :             return APPLETV_2G_NAMESTRING;
         case UIDeviceAppleTV3 :             return APPLETV_3G_NAMESTRING;
         case UIDeviceAppleTV4 :             return APPLETV_4G_NAMESTRING;
         case UIDeviceUnknownAppleTV:        return APPLETV_UNKNOWN_NAMESTRING;
-            
+
         case UIDeviceiPhoneSimulator:       return IPHONE_SIMULATOR_NAMESTRING;
         case UIDeviceiPhoneSimulatoriPhone: return IPHONE_SIMULATOR_IPHONE_NAMESTRING;
         case UIDeviceiPhoneSimulatoriPad:   return IPHONE_SIMULATOR_IPAD_NAMESTRING;
         case UIDeviceSimulatorAppleTV:      return SIMULATOR_APPLETV_NAMESTRING;
-            
+
         case UIDeviceIFPGA:                 return IFPGA_NAMESTRING;
-            
+
         default:                            return IOS_FAMILY_UNKNOWN_DEVICE;
     }
 }
@@ -364,19 +364,9 @@
     return ([UIScreen mainScreen].scale == 2.0f);
 }
 
-+ (NSString *) imageSuffixRetinaDisplay
-{
-    return @"@2x";
-}
-
 + (BOOL) has4InchDisplay
 {
     return ([UIScreen mainScreen].bounds.size.height == 568);
-}
-
-+ (NSString *) imageSuffix4InchDisplay
-{
-    return @"-568h";
 }
 
 - (UIDeviceFamily) deviceFamily
@@ -396,7 +386,7 @@
             return UIDeviceFamilyiPad;
         }
     }
-    
+
     return UIDeviceFamilyUnknown;
 }
 
@@ -412,47 +402,47 @@
     unsigned char       *ptr;
     struct if_msghdr    *ifm;
     struct sockaddr_dl  *sdl;
-    
+
     mib[0] = CTL_NET;
     mib[1] = AF_ROUTE;
     mib[2] = 0;
     mib[3] = AF_LINK;
     mib[4] = NET_RT_IFLIST;
-    
+
     if ((mib[5] = if_nametoindex("en0")) == 0) {
         printf("Error: if_nametoindex error\n");
         return NULL;
     }
-    
+
     if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 1\n");
         return NULL;
     }
-    
+
     if ((buf = malloc(len)) == NULL) {
         printf("Error: Memory allocation error\n");
         return NULL;
     }
-    
+
     if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 2\n");
         free(buf); // Thanks, Remy "Psy" Demerest
         return NULL;
     }
-    
+
     ifm = (struct if_msghdr *)buf;
     sdl = (struct sockaddr_dl *)(ifm + 1);
     ptr = (unsigned char *)LLADDR(sdl);
-    NSString *outstring = [NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X", 
+    NSString *outstring = [NSString stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X",
                            *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
-    // NSString *outstring = [NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X", 
+    // NSString *outstring = [NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X",
     //                       *ptr, *(ptr+1), *(ptr+2), *(ptr+3), *(ptr+4), *(ptr+5)];
     free(buf);
     return outstring;
 }
 
 // Illicit Bluetooth check -- cannot be used in App Store
-/* 
+/*
 Class  btclass = NSClassFromString(@"GKBluetoothSupport");
 if ([btclass respondsToSelector:@selector(bluetoothStatus)])
 {
