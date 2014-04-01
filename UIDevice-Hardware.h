@@ -49,7 +49,6 @@
 
 
 #define PPI_UNKNOWN             9999
-#define PPI_TODO                8888
 
 #define IFPGA_PPI                PPI_UNKNOWN
 
@@ -63,11 +62,11 @@
 #define IPHONE_5S_PPI            326
 #define IPHONE_UNKNOWN_PPI       PPI_UNKNOWN
 
-#define IPOD_1_PPI               PPI_TODO
-#define IPOD_2_PPI               PPI_TODO
-#define IPOD_3_PPI               PPI_TODO
-#define IPOD_4_PPI               PPI_TODO
-#define IPOD_5_PPI               PPI_TODO
+#define IPOD_1_PPI               163
+#define IPOD_2_PPI               163
+#define IPOD_3_PPI               163
+#define IPOD_4_PPI               326
+#define IPOD_5_PPI               326
 #define IPOD_UNKNOWN_PPI         PPI_UNKNOWN
 
 #define IPAD_1_PPI               132
@@ -80,9 +79,9 @@
 #define IPAD_MINI_PPI            163
 #define IPAD_UNKNOWN_PPI         PPI_UNKNOWN
 
-#define APPLETV_2G_PPI           PPI_TODO
-#define APPLETV_3G_PPI           PPI_TODO
-#define APPLETV_4G_PPI           PPI_TODO
+#define APPLETV_2G_PPI           PPI_UNKNOWN
+#define APPLETV_3G_PPI           PPI_UNKNOWN
+#define APPLETV_4G_PPI           PPI_UNKNOWN
 #define APPLETV_UNKNOWN_PPI      PPI_UNKNOWN
 
 #define IOS_FAMILY_UNKNOWN_DEVICE_PPI       PPI_UNKNOWN
@@ -91,6 +90,50 @@
 #define IPHONE_SIMULATOR_IPHONE_PPI  PPI_UNKNOWN
 #define IPHONE_SIMULATOR_IPAD_PPI    PPI_UNKNOWN
 #define SIMULATOR_APPLETV_PPI    PPI_UNKNOWN
+
+
+#define FREQ_UNKNOWN             9999
+
+#define IFPGA_FREQ                FREQ_UNKNOWN
+
+#define IPHONE_1_FREQ             412
+#define IPHONE_3G_FREQ            412
+#define IPHONE_3GS_FREQ           600
+#define IPHONE_4_FREQ             800
+#define IPHONE_4S_FREQ            800
+#define IPHONE_5_FREQ             1300
+#define IPHONE_5C_FREQ            1300
+#define IPHONE_5S_FREQ            1300
+#define IPHONE_UNKNOWN_FREQ       FREQ_UNKNOWN
+
+#define IPOD_1_FREQ               412
+#define IPOD_2_FREQ               533
+#define IPOD_3_FREQ               600
+#define IPOD_4_FREQ               800
+#define IPOD_5_FREQ               800
+#define IPOD_UNKNOWN_FREQ         FREQ_UNKNOWN
+
+#define IPAD_1_FREQ               1000
+#define IPAD_2_FREQ               1000
+#define THE_NEW_IPAD_FREQ         1000
+#define IPAD_4G_FREQ              1400
+#define IPAD_AIR_FREQ             1400
+#define IPAD_AIR_LTE_FREQ         IPAD_AIR_FREQ
+
+#define IPAD_MINI_FREQ            1000
+#define IPAD_UNKNOWN_FREQ         FREQ_UNKNOWN
+
+#define APPLETV_2G_FREQ           1000
+#define APPLETV_3G_FREQ           1000
+#define APPLETV_4G_FREQ           1000
+#define APPLETV_UNKNOWN_FREQ      FREQ_UNKNOWN
+
+#define IOS_FAMILY_UNKNOWN_DEVICE_FREQ       FREQ_UNKNOWN
+
+#define IPHONE_SIMULATOR_FREQ         FREQ_UNKNOWN
+#define IPHONE_SIMULATOR_IPHONE_FREQ  FREQ_UNKNOWN
+#define IPHONE_SIMULATOR_IPAD_FREQ    FREQ_UNKNOWN
+#define SIMULATOR_APPLETV_FREQ    FREQ_UNKNOWN
 
 typedef enum {
     UIDeviceUnknown,
@@ -172,6 +215,7 @@ typedef enum {
 + (NSString *) platformStringForType:(NSUInteger)platformType;
 + (NSString *) platformStringForPlatform:(NSString *)platform;
 + (NSUInteger) ppiForPlatformType:(NSUInteger)platformType;
++ (NSUInteger) cpuFreqForPlatformType:(NSUInteger)platformType;
 
 + (BOOL) hasRetinaDisplay;
 + (BOOL) has4InchDisplay;

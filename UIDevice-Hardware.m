@@ -404,6 +404,57 @@
     }
 }
 
++ (NSUInteger) cpuFreqForPlatformType:(NSUInteger)platformType
+{
+    switch (platformType)
+    {
+        case UIDeviceiPhone1:               return IPHONE_1_FREQ;
+        case UIDeviceiPhone3G:              return IPHONE_3G_FREQ;
+        case UIDeviceiPhone3GS:             return IPHONE_3GS_FREQ;
+        case UIDeviceiPhone4GSM:            return IPHONE_4_FREQ;
+        case UIDeviceiPhone4GSMRevA:        return IPHONE_4_FREQ;
+        case UIDeviceiPhone4CDMA:           return IPHONE_4_FREQ;
+        case UIDeviceiPhone4S:              return IPHONE_4S_FREQ;
+        case UIDeviceiPhone5GSM:            return IPHONE_5_FREQ;
+        case UIDeviceiPhone5CDMA:           return IPHONE_5_FREQ;
+        case UIDeviceiPhone5CGSM:           return IPHONE_5C_FREQ;
+        case UIDeviceiPhone5CGSMCDMA:       return IPHONE_5C_FREQ;
+        case UIDeviceiPhone5SGSM:           return IPHONE_5S_FREQ;
+        case UIDeviceiPhone5SGSMCDMA:       return IPHONE_5S_FREQ;
+        case UIDeviceUnknowniPhone:         return IPHONE_UNKNOWN_FREQ;
+
+        case UIDeviceiPod1:                 return IPOD_1_FREQ;
+        case UIDeviceiPod2:                 return IPOD_2_FREQ;
+        case UIDeviceiPod3:                 return IPOD_3_FREQ;
+        case UIDeviceiPod4:                 return IPOD_4_FREQ;
+        case UIDeviceiPod5:                 return IPOD_5_FREQ;
+        case UIDeviceUnknowniPod:           return IPOD_UNKNOWN_FREQ;
+
+        case UIDeviceiPad1 :                return IPAD_1_FREQ;
+        case UIDeviceiPad2 :                return IPAD_2_FREQ;
+        case UIDeviceTheNewiPad :           return THE_NEW_IPAD_FREQ;
+        case UIDeviceiPad4G :               return IPAD_4G_FREQ;
+        case UIDeviceiPadAir :              return IPAD_AIR_FREQ;
+        case UIDeviceiPadAirLTE :           return IPAD_AIR_LTE_FREQ;
+        case UIDeviceiPadMini :             return IPAD_MINI_FREQ;
+        case UIDeviceUnknowniPad :          return IPAD_UNKNOWN_FREQ;
+
+        case UIDeviceAppleTV2 :             return APPLETV_2G_FREQ;
+        case UIDeviceAppleTV3 :             return APPLETV_3G_FREQ;
+        case UIDeviceAppleTV4 :             return APPLETV_4G_FREQ;
+        case UIDeviceUnknownAppleTV:        return APPLETV_UNKNOWN_FREQ;
+
+        case UIDeviceiPhoneSimulator:       return IPHONE_SIMULATOR_FREQ;
+        case UIDeviceiPhoneSimulatoriPhone: return IPHONE_SIMULATOR_IPHONE_FREQ;
+        case UIDeviceiPhoneSimulatoriPad:   return IPHONE_SIMULATOR_IPAD_FREQ;
+        case UIDeviceSimulatorAppleTV:      return SIMULATOR_APPLETV_FREQ;
+
+        case UIDeviceIFPGA:                 return IFPGA_FREQ;
+
+        default:                            return IOS_FAMILY_UNKNOWN_DEVICE_FREQ;
+    }
+}
+
 + (NSString *) platformStringForPlatform:(NSString *)platform
 {
 	NSUInteger platformType = [UIDevice platformTypeForString:platform];
