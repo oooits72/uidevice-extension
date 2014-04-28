@@ -121,11 +121,11 @@
 #pragma mark sysctl utils
 - (NSUInteger) getSysInfo: (uint) typeSpecifier
 {
-    size_t size = sizeof(int);
-    int results;
+    size_t size = sizeof(NSInteger);
+    NSInteger results;
     int mib[2] = {CTL_HW, typeSpecifier};
     sysctl(mib, 2, &results, &size, NULL, 0);
-    return (NSUInteger) results;
+    return results;
 }
 
 - (NSUInteger) cpuFrequency
