@@ -135,7 +135,7 @@
 #define IPHONE_SIMULATOR_IPAD_FREQ    FREQ_UNKNOWN
 #define SIMULATOR_APPLETV_FREQ    FREQ_UNKNOWN
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, UIDevicePlatform) {
     UIDeviceUnknown,
 
     UIDeviceiPhoneSimulator,
@@ -182,17 +182,15 @@ typedef enum {
     UIDeviceUnknowniPad,
     UIDeviceUnknownAppleTV,
     UIDeviceIFPGA,
+};
 
-} UIDevicePlatform;
-
-typedef enum {
+typedef NS_ENUM(NSUInteger, UIDeviceFamily) {
     UIDeviceFamilyiPhone,
     UIDeviceFamilyiPod,
     UIDeviceFamilyiPad,
     UIDeviceFamilyAppleTV,
     UIDeviceFamilyUnknown,
-
-} UIDeviceFamily;
+};
 
 @interface UIDevice (Hardware)
 - (NSString *) platform;
