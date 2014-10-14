@@ -241,8 +241,8 @@
     if ([platform isEqualToString:@"iPhone5,4"])    return UIDeviceiPhone5CGSMCDMA;
     if ([platform isEqualToString:@"iPhone6,1"])    return UIDeviceiPhone5SGSM;
     if ([platform isEqualToString:@"iPhone6,2"])    return UIDeviceiPhone5SGSMCDMA;
-    if ([platform isEqualToString:@"iPhone7,1"])    return UIDeviceiPhone6GSMCDMA;
-    if ([platform isEqualToString:@"iPhone7,2"])    return UIDeviceiPhone6PlusGSMCDMA;
+    if ([platform isEqualToString:@"iPhone7,1"])    return UIDeviceiPhone6PlusGSMCDMA;
+    if ([platform isEqualToString:@"iPhone7,2"])    return UIDeviceiPhone6GSMCDMA;
 
     // iPod
     if ([platform hasPrefix:@"iPod1"])              return UIDeviceiPod1;
