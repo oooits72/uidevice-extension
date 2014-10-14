@@ -8,26 +8,27 @@
 #import "UIDeviceConstants.h"
 
 @interface UIDevice (Hardware)
-- (NSString *) machine;
-- (NSString *) hwmodel;
 
-- (UIDevicePlatform) platform;
-- (NSString*) modelName;
-- (NSString*) productName;
+@property (nonatomic, strong, readonly) NSString* machine;
+@property (nonatomic, strong, readonly) NSString* hwmodel;
 
-- (UIDeviceFamily) deviceFamily;
+@property (nonatomic, readonly) UIDevicePlatform platform;
+@property (nonatomic, strong, readonly) NSString* modelName;
+@property (nonatomic, strong, readonly) NSString* productName;
 
-- (NSUInteger) cpuFrequency;
-- (NSUInteger) busFrequency;
-- (NSUInteger) cpuCount;
-- (NSUInteger) totalMemory;
-- (NSUInteger) userMemory;
+@property (nonatomic, readonly) UIDeviceFamily deviceFamily;
 
-- (NSNumber *) totalDiskSpace;
-- (NSNumber *) freeDiskSpace;
+@property (nonatomic, readonly) NSUInteger cpuFrequency;
+@property (nonatomic, readonly) NSUInteger busFrequency;
+@property (nonatomic, readonly) NSUInteger cpuCount;
+@property (nonatomic, readonly) NSUInteger totalMemory;
+@property (nonatomic, readonly) NSUInteger userMemory;
 
-- (NSString *) macaddress;
+@property (nonatomic, strong, readonly) NSNumber* totalDiskSpace;
+@property (nonatomic, strong, readonly) NSNumber* freeDiskSpace;
 
-- (NSUInteger) ppi;
+@property (nonatomic, strong, readonly) NSString* macaddress;
+
+@property (nonatomic, readonly) NSUInteger ppi;
 
 @end
