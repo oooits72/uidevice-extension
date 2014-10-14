@@ -16,6 +16,8 @@
 #define IPHONE_5_NAMESTRING             @"iPhone 5"
 #define IPHONE_5C_NAMESTRING            @"iPhone 5C"
 #define IPHONE_5S_NAMESTRING            @"iPhone 5S"
+#define IPHONE_6_NAMESTRING             @"iPhone 6"
+#define IPHONE_6_PLUS_NAMESTRING        @"iPhone 6 Plus"
 #define IPHONE_UNKNOWN_NAMESTRING       @"Unknown iPhone"
 
 #define IPOD_1_NAMESTRING               @"iPod touch 1"
@@ -60,6 +62,8 @@
 #define IPHONE_5_PPI             326
 #define IPHONE_5C_PPI            326
 #define IPHONE_5S_PPI            326
+#define IPHONE_6_PPI             326
+#define IPHONE_6_PLUS_PPI        401
 #define IPHONE_UNKNOWN_PPI       PPI_UNKNOWN
 
 #define IPOD_1_PPI               163
@@ -104,6 +108,8 @@
 #define IPHONE_5_FREQ             1300
 #define IPHONE_5C_FREQ            1300
 #define IPHONE_5S_FREQ            1300
+#define IPHONE_6_FREQ             1400
+#define IPHONE_6_PLUS_FREQ        1400
 #define IPHONE_UNKNOWN_FREQ       FREQ_UNKNOWN
 
 #define IPOD_1_FREQ               412
@@ -158,6 +164,8 @@ typedef NS_ENUM(NSUInteger, UIDevicePlatform) {
     UIDeviceiPhone5CGSMCDMA,
     UIDeviceiPhone5SGSM,
     UIDeviceiPhone5SGSMCDMA,
+    UIDeviceiPhone6GSMCDMA,
+    UIDeviceiPhone6PlusGSMCDMA,
 
     UIDeviceiPod1,
     UIDeviceiPod2,

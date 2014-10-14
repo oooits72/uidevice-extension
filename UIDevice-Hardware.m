@@ -241,6 +241,8 @@
     if ([platform isEqualToString:@"iPhone5,4"])    return UIDeviceiPhone5CGSMCDMA;
     if ([platform isEqualToString:@"iPhone6,1"])    return UIDeviceiPhone5SGSM;
     if ([platform isEqualToString:@"iPhone6,2"])    return UIDeviceiPhone5SGSMCDMA;
+    if ([platform isEqualToString:@"iPhone7,1"])    return UIDeviceiPhone6GSMCDMA;
+    if ([platform isEqualToString:@"iPhone7,2"])    return UIDeviceiPhone6PlusGSMCDMA;
 
     // iPod
     if ([platform hasPrefix:@"iPod1"])              return UIDeviceiPod1;
@@ -319,6 +321,8 @@
         case UIDeviceiPhone5CGSMCDMA:       return IPHONE_5C_NAMESTRING;
         case UIDeviceiPhone5SGSM:           return IPHONE_5S_NAMESTRING;
         case UIDeviceiPhone5SGSMCDMA:       return IPHONE_5S_NAMESTRING;
+        case UIDeviceiPhone6PlusGSMCDMA:    return IPHONE_6_NAMESTRING;
+        case UIDeviceiPhone6GSMCDMA:        return IPHONE_6_PLUS_NAMESTRING;
         case UIDeviceUnknowniPhone:         return IPHONE_UNKNOWN_NAMESTRING;
 
         case UIDeviceiPod1:                 return IPOD_1_NAMESTRING;
@@ -370,6 +374,8 @@
         case UIDeviceiPhone5CGSMCDMA:       return IPHONE_5C_PPI;
         case UIDeviceiPhone5SGSM:           return IPHONE_5S_PPI;
         case UIDeviceiPhone5SGSMCDMA:       return IPHONE_5S_PPI;
+        case UIDeviceiPhone6GSMCDMA:        return IPHONE_6_PPI;
+        case UIDeviceiPhone6PlusGSMCDMA:    return IPHONE_6_PLUS_PPI;
         case UIDeviceUnknowniPhone:         return IPHONE_UNKNOWN_PPI;
 
         case UIDeviceiPod1:                 return IPOD_1_PPI;
@@ -421,6 +427,8 @@
         case UIDeviceiPhone5CGSMCDMA:       return IPHONE_5C_FREQ;
         case UIDeviceiPhone5SGSM:           return IPHONE_5S_FREQ;
         case UIDeviceiPhone5SGSMCDMA:       return IPHONE_5S_FREQ;
+        case UIDeviceiPhone6GSMCDMA:        return IPHONE_6_FREQ;
+        case UIDeviceiPhone6PlusGSMCDMA:    return IPHONE_6_PLUS_FREQ;
         case UIDeviceUnknowniPhone:         return IPHONE_UNKNOWN_FREQ;
 
         case UIDeviceiPod1:                 return IPOD_1_FREQ;
