@@ -52,7 +52,7 @@ static NSDictionary * machineProductNameMapping = nil;
 + (void)initialize {
     machineModelNameMapping = @{
                                 UNKNOWN: UNKNOWN_MODEL_NAME,
-                                
+
                                 IPHONE_1_1: IPHONE_1_1_MODEL_NAME,
                                 IPHONE_1_2: IPHONE_1_2_MODEL_NAME,
                                 IPHONE_2_1: IPHONE_2_1_MODEL_NAME,
@@ -68,13 +68,13 @@ static NSDictionary * machineProductNameMapping = nil;
                                 IPHONE_6_2: IPHONE_6_2_MODEL_NAME,
                                 IPHONE_7_1: IPHONE_7_1_MODEL_NAME,
                                 IPHONE_7_2: IPHONE_7_2_MODEL_NAME,
-                                
+
                                 IPOD_1_1: IPOD_1_1_MODEL_NAME,
                                 IPOD_2_1: IPOD_2_1_MODEL_NAME,
                                 IPOD_3_1: IPOD_3_1_MODEL_NAME,
                                 IPOD_4_1: IPOD_4_1_MODEL_NAME,
                                 IPOD_5_1: IPOD_5_1_MODEL_NAME,
-                                
+
                                 IPAD_1_1: IPAD_1_1_MODEL_NAME,
                                 IPAD_2_1: IPAD_2_1_MODEL_NAME,
                                 IPAD_2_2: IPAD_2_2_MODEL_NAME,
@@ -95,14 +95,14 @@ static NSDictionary * machineProductNameMapping = nil;
                                 IPAD_4_4: IPAD_4_4_MODEL_NAME,
                                 IPAD_4_5: IPAD_4_5_MODEL_NAME,
                                 IPAD_4_6: IPAD_4_6_MODEL_NAME,
-                                
+
                                 SIMULATOR_386: SIMULATOR_386_MODEL_NAME,
                                 SIMULATOR_X86_64: SIMULATOR_X86_64_MODEL_NAME,
                                 };
-    
+
     machineProductNameMapping = @{
                                   UNKNOWN: UNKNOWN_PRODUCT_NAME,
-                                  
+
                                   IPHONE_1_1: IPHONE_1_1_PRODUCT_NAME,
                                   IPHONE_1_2: IPHONE_1_2_PRODUCT_NAME,
                                   IPHONE_2_1: IPHONE_2_1_PRODUCT_NAME,
@@ -118,13 +118,13 @@ static NSDictionary * machineProductNameMapping = nil;
                                   IPHONE_6_2: IPHONE_6_2_PRODUCT_NAME,
                                   IPHONE_7_1: IPHONE_7_1_PRODUCT_NAME,
                                   IPHONE_7_2: IPHONE_7_2_PRODUCT_NAME,
-                                  
+
                                   IPOD_1_1: IPOD_1_1_PRODUCT_NAME,
                                   IPOD_2_1: IPOD_2_1_PRODUCT_NAME,
                                   IPOD_3_1: IPOD_3_1_PRODUCT_NAME,
                                   IPOD_4_1: IPOD_4_1_PRODUCT_NAME,
                                   IPOD_5_1: IPOD_5_1_PRODUCT_NAME,
-                                  
+
                                   IPAD_1_1: IPAD_1_1_PRODUCT_NAME,
                                   IPAD_2_1: IPAD_2_1_PRODUCT_NAME,
                                   IPAD_2_2: IPAD_2_2_PRODUCT_NAME,
@@ -145,7 +145,7 @@ static NSDictionary * machineProductNameMapping = nil;
                                   IPAD_4_4: IPAD_4_4_PRODUCT_NAME,
                                   IPAD_4_5: IPAD_4_5_PRODUCT_NAME,
                                   IPAD_4_6: IPAD_4_6_PRODUCT_NAME,
-                                  
+
                                   SIMULATOR_386: SIMULATOR_386_PRODUCT_NAME,
                                   SIMULATOR_X86_64: SIMULATOR_X86_64_PRODUCT_NAME,
                                   };
@@ -156,12 +156,12 @@ static NSDictionary * machineProductNameMapping = nil;
 {
     size_t size;
     sysctlbyname(typeSpecifier, NULL, &size, NULL, 0);
-    
+
     char *answer = malloc(size);
     sysctlbyname(typeSpecifier, answer, &size, NULL, 0);
-    
+
     NSString *results = @(answer);
-    
+
     free(answer);
     return results;
 }
@@ -180,7 +180,7 @@ static NSDictionary * machineProductNameMapping = nil;
 
 - (UIDevicePlatform) platform {
     NSString* const machine = self.machine;
-    
+
     if ([machine isEqualToString: IPHONE_1_1]) return IPHONE_1_1_ENUM_VAL;
     if ([machine isEqualToString: IPHONE_1_2]) return IPHONE_1_2_ENUM_VAL;
     if ([machine isEqualToString: IPHONE_2_1]) return IPHONE_2_1_ENUM_VAL;
@@ -196,13 +196,13 @@ static NSDictionary * machineProductNameMapping = nil;
     if ([machine isEqualToString: IPHONE_6_2]) return IPHONE_6_2_ENUM_VAL;
     if ([machine isEqualToString: IPHONE_7_1]) return IPHONE_7_1_ENUM_VAL;
     if ([machine isEqualToString: IPHONE_7_2]) return IPHONE_7_2_ENUM_VAL;
-    
+
     if ([machine isEqualToString: IPOD_1_1])   return IPOD_1_1_ENUM_VAL;
     if ([machine isEqualToString: IPOD_2_1])   return IPOD_2_1_ENUM_VAL;
     if ([machine isEqualToString: IPOD_3_1])   return IPOD_3_1_ENUM_VAL;
     if ([machine isEqualToString: IPOD_4_1])   return IPOD_4_1_ENUM_VAL;
     if ([machine isEqualToString: IPOD_5_1])   return IPOD_5_1_ENUM_VAL;
-    
+
     if ([machine isEqualToString: IPAD_1_1])   return IPAD_1_1_ENUM_VAL;
     if ([machine isEqualToString: IPAD_2_1])   return IPAD_2_1_ENUM_VAL;
     if ([machine isEqualToString: IPAD_2_2])   return IPAD_2_2_ENUM_VAL;
@@ -223,10 +223,10 @@ static NSDictionary * machineProductNameMapping = nil;
     if ([machine isEqualToString: IPAD_4_4])   return IPAD_4_4_ENUM_VAL;
     if ([machine isEqualToString: IPAD_4_5])   return IPAD_4_5_ENUM_VAL;
     if ([machine isEqualToString: IPAD_4_6])   return IPAD_4_6_ENUM_VAL;
-    
+
     if ([machine isEqualToString: SIMULATOR_386])      return SIMULATOR_386_ENUM_VAL;
     if ([machine isEqualToString: SIMULATOR_X86_64])   return SIMULATOR_X86_64_ENUM_VAL;
-    
+
     return UNKNOWN_ENUM_VAL;
 }
 
@@ -293,11 +293,11 @@ static NSDictionary * machineProductNameMapping = nil;
 
 - (NSUInteger) ppi {
     const UIDevicePlatform platform = self.platform;
-    
+
     if (platform == UNKNOWN_ENUM_VAL) return UNKNOWN_PPI;
     if (platform == SIMULATOR_386_ENUM_VAL) return SIMULATOR_386_PPI;
     if (platform == SIMULATOR_X86_64_ENUM_VAL) return SIMULATOR_X86_64_PPI;
-    
+
     if (platform == IPHONE_1_1_ENUM_VAL) return IPHONE_1_1_PPI;
     if (platform == IPHONE_1_2_ENUM_VAL) return IPHONE_1_2_PPI;
     if (platform == IPHONE_2_1_ENUM_VAL) return IPHONE_2_1_PPI;
@@ -313,13 +313,13 @@ static NSDictionary * machineProductNameMapping = nil;
     if (platform == IPHONE_6_2_ENUM_VAL) return IPHONE_6_2_PPI;
     if (platform == IPHONE_7_1_ENUM_VAL) return IPHONE_7_1_PPI;
     if (platform == IPHONE_7_1_ENUM_VAL) return IPHONE_7_1_PPI;
-    
+
     if (platform == IPOD_1_1_ENUM_VAL) return IPOD_1_1_PPI;
     if (platform == IPOD_2_1_ENUM_VAL) return IPOD_2_1_PPI;
     if (platform == IPOD_3_1_ENUM_VAL) return IPOD_3_1_PPI;
     if (platform == IPOD_4_1_ENUM_VAL) return IPOD_4_1_PPI;
     if (platform == IPOD_5_1_ENUM_VAL) return IPOD_5_1_PPI;
-    
+
     if (platform == IPAD_1_1_ENUM_VAL) return IPAD_1_1_PPI;
     if (platform == IPAD_2_1_ENUM_VAL) return IPAD_2_1_PPI;
     if (platform == IPAD_2_2_ENUM_VAL) return IPAD_2_2_PPI;
@@ -340,17 +340,17 @@ static NSDictionary * machineProductNameMapping = nil;
     if (platform == IPAD_4_4_ENUM_VAL) return IPAD_4_4_PPI;
     if (platform == IPAD_4_5_ENUM_VAL) return IPAD_4_5_PPI;
     if (platform == IPAD_4_6_ENUM_VAL) return IPAD_4_6_PPI;
-    
+
     return UNKNOWN_PPI;
 }
 
 - (NSUInteger) cpuFrequency {
     const UIDevicePlatform platform = self.platform;
-    
+
     if (platform == UNKNOWN_ENUM_VAL) return [self getSysInfo:HW_CPU_FREQ];
     if (platform == SIMULATOR_386_ENUM_VAL) return [self getSysInfo:HW_CPU_FREQ];
     if (platform == SIMULATOR_X86_64_ENUM_VAL) return [self getSysInfo:HW_CPU_FREQ];
-    
+
     if (platform == IPHONE_1_1_ENUM_VAL) return IPHONE_1_1_FREQ;
     if (platform == IPHONE_1_2_ENUM_VAL) return IPHONE_1_2_FREQ;
     if (platform == IPHONE_2_1_ENUM_VAL) return IPHONE_2_1_FREQ;
@@ -391,8 +391,8 @@ static NSDictionary * machineProductNameMapping = nil;
     if (platform == IPAD_4_4_ENUM_VAL) return IPAD_4_4_FREQ;
     if (platform == IPAD_4_5_ENUM_VAL) return IPAD_4_5_FREQ;
     if (platform == IPAD_4_6_ENUM_VAL) return IPAD_4_6_FREQ;
-    
-    return [self getSysInfo:HW_CPU_FREQ];
+
+    return [self getSysInfo:HW_CPU_FREQ] / 1000 / 1000;
 }
 
 #pragma mark MAC addy
@@ -407,34 +407,34 @@ static NSDictionary * machineProductNameMapping = nil;
     unsigned char       *ptr;
     struct if_msghdr    *ifm;
     struct sockaddr_dl  *sdl;
-    
+
     mib[0] = CTL_NET;
     mib[1] = AF_ROUTE;
     mib[2] = 0;
     mib[3] = AF_LINK;
     mib[4] = NET_RT_IFLIST;
-    
+
     if ((mib[5] = if_nametoindex("en0")) == 0) {
         printf("Error: if_nametoindex error\n");
         return NULL;
     }
-    
+
     if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 1\n");
         return NULL;
     }
-    
+
     if ((buf = malloc(len)) == NULL) {
         printf("Error: Memory allocation error\n");
         return NULL;
     }
-    
+
     if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
         printf("Error: sysctl, take 2\n");
         free(buf); // Thanks, Remy "Psy" Demerest
         return NULL;
     }
-    
+
     ifm = (struct if_msghdr *)buf;
     sdl = (struct sockaddr_dl *)(ifm + 1);
     ptr = (unsigned char *)LLADDR(sdl);
