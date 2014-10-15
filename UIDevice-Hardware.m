@@ -347,9 +347,9 @@ static NSDictionary * machineProductNameMapping = nil;
 - (NSUInteger) cpuFrequency {
     const UIDevicePlatform platform = self.platform;
 
-    if (platform == UNKNOWN_ENUM_VAL) return [self getSysInfo:HW_CPU_FREQ];
-    if (platform == SIMULATOR_386_ENUM_VAL) return [self getSysInfo:HW_CPU_FREQ];
-    if (platform == SIMULATOR_X86_64_ENUM_VAL) return [self getSysInfo:HW_CPU_FREQ];
+    if (platform == UNKNOWN_ENUM_VAL) return [self getSysInfo:HW_CPU_FREQ] / 1000 / 1000;
+    if (platform == SIMULATOR_386_ENUM_VAL) return [self getSysInfo:HW_CPU_FREQ] / 1000 / 1000;
+    if (platform == SIMULATOR_X86_64_ENUM_VAL) return [self getSysInfo:HW_CPU_FREQ] / 1000 / 1000;
 
     if (platform == IPHONE_1_1_ENUM_VAL) return IPHONE_1_1_FREQ;
     if (platform == IPHONE_1_2_ENUM_VAL) return IPHONE_1_2_FREQ;
