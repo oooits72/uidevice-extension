@@ -259,7 +259,7 @@ static NSDictionary * machineProductNameMapping = nil;
 
 - (NSUInteger) cpuCount
 {
-    return [self getSysInfo:HW_NCPU];
+    return [self getSysInfoByName:"hw.physicalcpu_max"].integerValue;
 }
 
 - (NSUInteger) totalMemory
