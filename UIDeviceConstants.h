@@ -44,6 +44,11 @@
 #define IPAD_4_4 @"iPad4,4"
 #define IPAD_4_5 @"iPad4,5"
 #define IPAD_4_6 @"iPad4,6"
+#define IPAD_4_7 @"iPad4,7"
+#define IPAD_4_8 @"iPad4,8"
+#define IPAD_4_9 @"iPad4,9"
+#define IPAD_5_3 @"iPad5,3"
+#define IPAD_5_4 @"iPad5,4"
 
 #define SIMULATOR_386 @"i386"
 #define SIMULATOR_X86_64 @"x86_64"
@@ -103,6 +108,11 @@
 #define IPAD_4_4_ENUM_VAL (DEVICE_FAMILY_IPAD + 44)
 #define IPAD_4_5_ENUM_VAL (DEVICE_FAMILY_IPAD + 45)
 #define IPAD_4_6_ENUM_VAL (DEVICE_FAMILY_IPAD + 46)
+#define IPAD_4_7_ENUM_VAL (DEVICE_FAMILY_IPAD + 47)
+#define IPAD_4_8_ENUM_VAL (DEVICE_FAMILY_IPAD + 48)
+#define IPAD_4_9_ENUM_VAL (DEVICE_FAMILY_IPAD + 49)
+#define IPAD_5_3_ENUM_VAL (DEVICE_FAMILY_IPAD + 53)
+#define IPAD_5_4_ENUM_VAL (DEVICE_FAMILY_IPAD + 54)
 
 #define SIMULATOR_386_ENUM_VAL (DEVICE_FAMILY_SIMULATOR + 00)
 #define SIMULATOR_X86_64_ENUM_VAL (DEVICE_FAMILY_SIMULATOR + 01)
@@ -162,6 +172,11 @@ typedef NS_ENUM(NSUInteger, UIDevicePlatform) {
     UIDeviceiPadMini2WiFi = IPAD_4_4_ENUM_VAL,
     UIDeviceiPadMini2Celluar = IPAD_4_5_ENUM_VAL,
     UIDeviceiPadMini2CelluarRevA = IPAD_4_6_ENUM_VAL,
+    UIDeviceiPadMini3Wifi = IPAD_4_7_ENUM_VAL,
+    UIDeviceiPadMini3WifiCelluar = IPAD_4_8_ENUM_VAL,
+    UIDeviceiPadMini3WifiCelluarRevA = IPAD_4_9_ENUM_VAL,
+    UIDeviceiPadAir2Wifi = IPAD_5_3_ENUM_VAL,
+    UIDeviceiPadAir2WifiCelluar = IPAD_5_4_ENUM_VAL,
 };
 
 
@@ -211,6 +226,11 @@ typedef NS_ENUM(NSUInteger, UIDevicePlatform) {
 #define IPAD_4_4_PRODUCT_NAME @"iPad Mini 2G (WiFi)"
 #define IPAD_4_5_PRODUCT_NAME @"iPad Mini 2G (Cellular)"
 #define IPAD_4_6_PRODUCT_NAME @"iPad Mini 2G"
+#define IPAD_4_7_PRODUCT_NAME @"iPad Mini 3G"
+#define IPAD_4_8_PRODUCT_NAME @"iPad Mini 3G (WiFi)"
+#define IPAD_4_9_PRODUCT_NAME @"iPad Mini 3G (Celluar)"
+#define IPAD_5_3_PRODUCT_NAME @"iPad Air 2 (WiFi)"
+#define IPAD_5_4_PRODUCT_NAME @"iPad Air 2 (Celluar)"
 
 #define SIMULATOR_386_PRODUCT_NAME @"Simulator x386"
 #define SIMULATOR_X86_64_PRODUCT_NAME @"Simulator x86_64"
@@ -262,6 +282,11 @@ typedef NS_ENUM(NSUInteger, UIDevicePlatform) {
 #define IPAD_4_4_MODEL_NAME @"iPad Mini 2G"
 #define IPAD_4_5_MODEL_NAME @"iPad Mini 2G"
 #define IPAD_4_6_MODEL_NAME @"iPad Mini 2G"
+#define IPAD_4_7_MODEL_NAME @"iPad Mini 3G"
+#define IPAD_4_8_MODEL_NAME @"iPad Mini 3G"
+#define IPAD_4_9_MODEL_NAME @"iPad Mini 3G"
+#define IPAD_5_3_MODEL_NAME @"iPad Air 2"
+#define IPAD_5_4_MODEL_NAME @"iPad Air 2"
 
 #define SIMULATOR_386_MODEL_NAME @"Simulator x386"
 #define SIMULATOR_X86_64_MODEL_NAME @"Simulator x86_64"
@@ -313,6 +338,11 @@ typedef NS_ENUM(NSUInteger, UIDevicePlatform) {
 #define IPAD_4_4_PPI 326
 #define IPAD_4_5_PPI 326
 #define IPAD_4_6_PPI 326
+#define IPAD_4_7_PPI 326
+#define IPAD_4_8_PPI 326
+#define IPAD_4_9_PPI 326
+#define IPAD_5_3_PPI 264
+#define IPAD_5_4_PPI 264
 
 #define SIMULATOR_386_PPI UNKNOWN_PPI
 #define SIMULATOR_X86_64_PPI UNKNOWN_PPI
@@ -364,6 +394,11 @@ typedef NS_ENUM(NSUInteger, UIDevicePlatform) {
 #define IPAD_4_4_FREQ 1300
 #define IPAD_4_5_FREQ 1300
 #define IPAD_4_6_FREQ 1300
+#define IPAD_4_7_FREQ 1300
+#define IPAD_4_8_FREQ 1300
+#define IPAD_4_9_FREQ 1300
+#define IPAD_5_3_FREQ 1500
+#define IPAD_5_4_FREQ 1500
 
 #define SIMULATOR_386_FREQ UNKNOWN_FREQ
 #define SIMULATOR_X86_64_FREQ UNKNOWN_FREQ

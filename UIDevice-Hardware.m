@@ -95,6 +95,11 @@ static NSDictionary * machineProductNameMapping = nil;
                                 IPAD_4_4: IPAD_4_4_MODEL_NAME,
                                 IPAD_4_5: IPAD_4_5_MODEL_NAME,
                                 IPAD_4_6: IPAD_4_6_MODEL_NAME,
+                                IPAD_4_7: IPAD_4_7_MODEL_NAME,
+                                IPAD_4_8: IPAD_4_8_MODEL_NAME,
+                                IPAD_4_9: IPAD_4_9_MODEL_NAME,
+                                IPAD_5_3: IPAD_5_3_MODEL_NAME,
+                                IPAD_5_4: IPAD_5_4_MODEL_NAME,
 
                                 SIMULATOR_386: SIMULATOR_386_MODEL_NAME,
                                 SIMULATOR_X86_64: SIMULATOR_X86_64_MODEL_NAME,
@@ -145,6 +150,11 @@ static NSDictionary * machineProductNameMapping = nil;
                                   IPAD_4_4: IPAD_4_4_PRODUCT_NAME,
                                   IPAD_4_5: IPAD_4_5_PRODUCT_NAME,
                                   IPAD_4_6: IPAD_4_6_PRODUCT_NAME,
+                                  IPAD_4_7: IPAD_4_7_PRODUCT_NAME,
+                                  IPAD_4_8: IPAD_4_8_PRODUCT_NAME,
+                                  IPAD_4_9: IPAD_4_9_PRODUCT_NAME,
+                                  IPAD_5_3: IPAD_5_3_PRODUCT_NAME,
+                                  IPAD_5_4: IPAD_5_4_PRODUCT_NAME,
 
                                   SIMULATOR_386: SIMULATOR_386_PRODUCT_NAME,
                                   SIMULATOR_X86_64: SIMULATOR_X86_64_PRODUCT_NAME,
@@ -223,6 +233,11 @@ static NSDictionary * machineProductNameMapping = nil;
     if ([machine isEqualToString: IPAD_4_4])   return IPAD_4_4_ENUM_VAL;
     if ([machine isEqualToString: IPAD_4_5])   return IPAD_4_5_ENUM_VAL;
     if ([machine isEqualToString: IPAD_4_6])   return IPAD_4_6_ENUM_VAL;
+    if ([machine isEqualToString: IPAD_4_7])   return IPAD_4_7_ENUM_VAL;
+    if ([machine isEqualToString: IPAD_4_8])   return IPAD_4_8_ENUM_VAL;
+    if ([machine isEqualToString: IPAD_4_9])   return IPAD_4_9_ENUM_VAL;
+    if ([machine isEqualToString: IPAD_5_3])   return IPAD_5_3_ENUM_VAL;
+    if ([machine isEqualToString: IPAD_5_4])   return IPAD_5_4_ENUM_VAL;
 
     if ([machine isEqualToString: SIMULATOR_386])      return SIMULATOR_386_ENUM_VAL;
     if ([machine isEqualToString: SIMULATOR_X86_64])   return SIMULATOR_X86_64_ENUM_VAL;
@@ -340,6 +355,11 @@ static NSDictionary * machineProductNameMapping = nil;
     if (platform == IPAD_4_4_ENUM_VAL) return IPAD_4_4_PPI;
     if (platform == IPAD_4_5_ENUM_VAL) return IPAD_4_5_PPI;
     if (platform == IPAD_4_6_ENUM_VAL) return IPAD_4_6_PPI;
+    if (platform == IPAD_4_7_ENUM_VAL) return IPAD_4_7_PPI;
+    if (platform == IPAD_4_8_ENUM_VAL) return IPAD_4_8_PPI;
+    if (platform == IPAD_4_9_ENUM_VAL) return IPAD_4_9_PPI;
+    if (platform == IPAD_5_3_ENUM_VAL) return IPAD_5_3_PPI;
+    if (platform == IPAD_5_4_ENUM_VAL) return IPAD_5_4_PPI;
 
     return UNKNOWN_PPI;
 }
@@ -366,11 +386,13 @@ static NSDictionary * machineProductNameMapping = nil;
     if (platform == IPHONE_6_2_ENUM_VAL) return IPHONE_6_2_FREQ;
     if (platform == IPHONE_7_1_ENUM_VAL) return IPHONE_7_1_FREQ;
     if (platform == IPHONE_7_1_ENUM_VAL) return IPHONE_7_1_FREQ;
+
     if (platform == IPOD_1_1_ENUM_VAL) return IPOD_1_1_FREQ;
     if (platform == IPOD_2_1_ENUM_VAL) return IPOD_2_1_FREQ;
     if (platform == IPOD_3_1_ENUM_VAL) return IPOD_3_1_FREQ;
     if (platform == IPOD_4_1_ENUM_VAL) return IPOD_4_1_FREQ;
     if (platform == IPOD_5_1_ENUM_VAL) return IPOD_5_1_FREQ;
+
     if (platform == IPAD_1_1_ENUM_VAL) return IPAD_1_1_FREQ;
     if (platform == IPAD_2_1_ENUM_VAL) return IPAD_2_1_FREQ;
     if (platform == IPAD_2_2_ENUM_VAL) return IPAD_2_2_FREQ;
@@ -391,6 +413,11 @@ static NSDictionary * machineProductNameMapping = nil;
     if (platform == IPAD_4_4_ENUM_VAL) return IPAD_4_4_FREQ;
     if (platform == IPAD_4_5_ENUM_VAL) return IPAD_4_5_FREQ;
     if (platform == IPAD_4_6_ENUM_VAL) return IPAD_4_6_FREQ;
+    if (platform == IPAD_4_7_ENUM_VAL) return IPAD_4_7_FREQ;
+    if (platform == IPAD_4_8_ENUM_VAL) return IPAD_4_8_FREQ;
+    if (platform == IPAD_4_9_ENUM_VAL) return IPAD_4_9_FREQ;
+    if (platform == IPAD_5_3_ENUM_VAL) return IPAD_5_3_FREQ;
+    if (platform == IPAD_5_4_ENUM_VAL) return IPAD_5_4_FREQ;
 
     return [self getSysInfo:HW_CPU_FREQ] / 1000 / 1000;
 }
